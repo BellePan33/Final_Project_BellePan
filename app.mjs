@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import './config.mjs';
 import MakeupArtist from './models/MakeupArtist.mjs';
 
 const app = express();
@@ -9,7 +10,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-mongoose.connect('mongodb://127.0.0.1:27017/cosplay-booking');
+mongoose.connect(process.env.DSN);
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
@@ -44,6 +45,8 @@ app.get('/artists', async (req, res) => {
   res.render('artists', { artists });
 });
 
-app.listen(3000, () => {
-  console.log('server running on port 3000');
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`server running on port ${port}`);
 });
