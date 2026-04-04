@@ -2,7 +2,7 @@
   "name": "final_project_bellepan",
   "version": "1.0.0",
   "description": "Project Name: Anime Cosplay Makeup Booking Website",
-  "main": "index.js",
+  "main": "app.mjs",
   "dependencies": {
     "accepts": "^2.0.0",
     "body-parser": "^2.2.2",
@@ -95,10 +95,11 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
+    "start": "node app.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }
