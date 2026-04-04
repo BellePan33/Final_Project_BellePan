@@ -3,24 +3,27 @@ Milestone 02
 
 Repository Link
 ---
-(TODO: add the link to your repository in github, such as, https://github.com/[COURSE]/[REPO_NAME])
+https://github.com/BellePan33/Final_Project_BellePan
 
-Special Instructions for Using Form (or Login details if auth is part of your project)
+Open the artist profile creation form, fill in the fields, and submit. After submitting, the app redirects to the artist list page, where the saved result is visible.
 ---
 (TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
 
 URL for form 
 ---
-(TODO: add link to a functioning form; this will likely be `your-repo-name.onrender.com`)
+https://final-project-bellepan.onrender.com/artists/new
 
 URL for form result
 ---
-(TODO: if applicable, add link to page that shows results of submitting form)
+https://final-project-bellepan.onrender.com/artists
 
 URL to github that shows line of code where research topic(s) are used / implemented
 --- 
-(TODO: add link to github url that shows line or lines of code that demonstrate in progress work on at least one research topic)
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/home.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/artists.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/artist-new.hbs
 
 References 
 ---
-(TODO: if applicable, links to annotated lines of code in github repository that were based off of tutorials / articles / sample projects)
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+https://getbootstrap.com/docs/5.3/forms/overview/
