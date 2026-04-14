@@ -23,9 +23,10 @@ const MakeupArtistSchema = new mongoose.Schema({
   contact: {
     type: String,
     trim: true
-  }
+  },
+  availableSlots: [String],
+  createdAt: { type: Date, default: Date.now }
 });
 
 const MakeupArtist = mongoose.model('MakeupArtist', MakeupArtistSchema);
-
 export default MakeupArtist;

@@ -14,6 +14,7 @@
     "content-type": "^1.0.5",
     "cookie": "^0.7.2",
     "cookie-signature": "^1.2.2",
+    "dayjs": "^1.11.20",
     "debug": "^4.4.3",
     "depd": "^2.0.0",
     "dotenv": "^17.4.0",
@@ -96,10 +97,14 @@
   },
   "scripts": {
     "start": "node app.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5"
+  }
 }
