@@ -13,7 +13,10 @@
   <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="h3 mb-0">Artist List</h1>
-      <a href="/artists/new" class="btn btn-primary">Create New Artist Profile</a>
+      <div class="d-flex gap-2">
+        <a href="/" class="btn btn-outline-secondary">Back to Home</a>
+        <a href="/artists/new" class="btn btn-primary">Create New Artist Profile</a>
+      </div>
     </div>
 
     {{#if artists.length}}
