@@ -15,60 +15,81 @@ https://github.com/BellePan33/Final_Project_BellePan
 
 URL for deployed site 
 ---
-(TODO: add url for your dpeloyed site)
+https://final-project-bellepan.onrender.com
 
 URL for form 1 (from previous milestone) 
 ---
-(TODO: add link to a functioning form)
+https://final-project-bellepan.onrender.com/artists/new
 
 Special Instructions for Form 1
 ---
-(TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
+This form is for makeup artists. Fill out the artist profile form and submit. After submitting, the app redirects to the artist list page.
 
 URL for form 2 (for current milestone)
 ---
-(TODO: if applicable, add link to page that shows results of submitting form)
+https://final-project-bellepan.onrender.com/bookings/new/[ARTIST_ID]
 
 Special Instructions for Form 2
 ---
-(TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
+To test the booking form, first open the artist list page and choose an artist. Then use the Book button for that artist to open the booking form. Fill in the customer name, cosplay character, and time slot, then submit.
 
 URL for form 3 (from previous milestone) 
 ---
-(TODO: add link to a functioning form)
+https://final-project-bellepan.onrender.com/customers/start
 
 Special Instructions for Form 3
 ---
-(TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
+This page is the customer portal. A customer can enter their name, browse artists, and later view their own bookings.
 
 First link to github line number(s) for constructor, HOF, etc.
 ---
-(TODO: add link to line number(s) here) 
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/app.mjs#L89-L93
 
 Second link to github line number(s) for constructor, HOF, etc.
 ---
-(TODO: add link to line number(s) here) 
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/app.mjs#L45-L61
 
 Short description for links above
 ---
-(TODO: describe what each link above is, one line each... for example: myFunction is a hof that retrieves json from a url, map is used to transform the Array of Person objects into an Array of strings that represents names)
+1. I used Array.prototype.map in the /artists route to transform artist documents into formatted objects for rendering.
+2. I generated booking slot objects in the booking route for the booking form, so the page could display formatted date and time-slot options.
 
 Link to github line number(s) for schemas (db.js or models folder)
 ---
-(TODO: add link to schemas)
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/models/MakeupArtist.mjs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/models/Booking.mjs
 
 Description of research topics above with points
 ---
-(TODO: add description of research topics here, including point values for each, one per line... for example: 2 points - applied and modified "Clean Blog" Bootstrap theme)
+2 points - Bootstrap: used Bootstrap classes and customized page layout for the homepage, artist list, artist form, booking form, and bookings page.
+3 points - Day.js: used Day.js to format displayed dates and generate booking date / time-slot values.
+3 points - Unit testing with JavaScript: used test code in the repository for application testing.
+2 points - Additional server-side JavaScript module usage / deployment-related environment configuration with dotenv.
 
 Links to github line number(s) for research topics described above (one link per line)
 ---
-(TODO: add link to github line number(s), one per line for research topics ... for example, if using auth/passport, link to auth.js or where bulk of auth code is)
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/home.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/artist-new.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/artists.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/booking-new.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/views/my-bookings.hbs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/app.mjs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/config.mjs
+https://github.com/BellePan33/Final_Project_BellePan/blob/main/test/artist.test.mjs
 
 Optional project notes 
 --- 
-(TODO: optionally add add any other information required for using/testing the final project)
+This project is a cosplay makeup booking web application. The homepage separates the experience for makeup artists and customers. Makeup artists can create a profile. Customers can browse artists, make a booking, and view their own bookings. The deployed app may take some extra time to wake up because it is hosted on Render free tier.
 
 Attributions
 ---
-(TODO:  list sources that you have based your code off of, 1 per line, with file name, a very short description, and an accompanying url... for example: routes/index.js - Authentication code based off of http://foo.bar/baz ... alternatively, if you have already placed annotations in your project, answer "See source code comments")
+Bootstrap documentation for layout, forms, cards, buttons, and grid:
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+https://getbootstrap.com/docs/5.3/forms/overview/
+https://getbootstrap.com/docs/5.3/components/card/
+https://getbootstrap.com/docs/5.3/components/buttons/
+https://getbootstrap.com/docs/5.3/layout/grid/
+
+Day.js documentation for formatting and date/time handling:
+https://day.js.org/docs/en/display/format
+https://day.js.org/docs/en/parse/parse
