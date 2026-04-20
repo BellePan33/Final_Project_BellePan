@@ -30,7 +30,29 @@ app.get('/artists/new', (req, res) => {
 
 app.get('/bookings/new/:artistId', async (req, res) => {
   const artist = await MakeupArtist.findById(req.params.artistId);
-  res.render('booking-new', { artist });
+
+  const bookingDate = dayjs().format('YYYY-MM-DD');
+
+  const slots = [];
+  let current = dayjs().hour(5).minute(0).second(0);
+  const end = dayjs().hour(12).minute(0).second(0);
+
+  while (current.add(40, 'minute').isSame(end) || current.add(40, 'minute').isBefore(end)) {
+    const next = current.add(40, 'minute');
+
+    slots.push({
+      value: `${bookingDate} ${current.format('h:mm A')} - ${next.format('h:mm A')}`,
+      label: `${bookingDate} | ${current.format('h:mm A')} - ${next.format('h:mm A')}`
+    });
+
+    current = next;
+  }
+
+  res.render('booking-new', {
+    artist,
+    bookingDate,
+    slots
+  });
 });
 
 app.post('/artists', async (req, res) => {
