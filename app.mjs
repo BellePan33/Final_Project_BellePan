@@ -28,8 +28,17 @@ app.get('/artists/new', (req, res) => {
   res.render('artist-new');
 });
 
+app.get('/customers/start', (req, res) => {
+  res.render('customer-start');
+});
+
+app.get('/artists/portal', (req, res) => {
+  res.render('artist-portal');
+});
+
 app.get('/bookings/new/:artistId', async (req, res) => {
   const artist = await MakeupArtist.findById(req.params.artistId);
+  const customerName = req.query.customerName || '';
 
   const bookingDate = dayjs().format('YYYY-MM-DD');
 
@@ -37,7 +46,10 @@ app.get('/bookings/new/:artistId', async (req, res) => {
   let current = dayjs().hour(5).minute(0).second(0);
   const end = dayjs().hour(12).minute(0).second(0);
 
-  while (current.add(40, 'minute').isSame(end) || current.add(40, 'minute').isBefore(end)) {
+  while (
+    current.add(40, 'minute').isBefore(end) ||
+    current.add(40, 'minute').isSame(end)
+  ) {
     const next = current.add(40, 'minute');
 
     slots.push({
@@ -51,7 +63,8 @@ app.get('/bookings/new/:artistId', async (req, res) => {
   res.render('booking-new', {
     artist,
     bookingDate,
-    slots
+    slots,
+    customerName
   });
 });
 
@@ -71,14 +84,18 @@ app.post('/artists', async (req, res) => {
 
 app.get('/artists', async (req, res) => {
   const artists = await MakeupArtist.find({});
-  
+  const customerName = req.query.customerName || '';
+
   const formattedArtists = artists.map(artist => {
     const doc = artist.toObject();
     doc.formattedDate = dayjs(doc.createdAt).format('YYYY-MM-DD');
     return doc;
   });
 
-  res.render('artists', { artists: formattedArtists });
+  res.render('artists', {
+    artists: formattedArtists,
+    customerName
+  });
 });
 
 
@@ -93,7 +110,18 @@ app.post('/bookings', async (req, res) => {
     status: 'booked'
   });
 
-  res.redirect('/artists'); 
+  res.redirect(`/my-bookings?clientName=${encodeURIComponent(clientName)}`);
+});
+
+  app.get('/my-bookings', async (req, res) => {
+  const clientName = req.query.clientName || '';
+
+  const bookings = await Booking.find({ clientName }).populate('artist');
+
+  res.render('my-bookings', {
+    clientName,
+    bookings
+  });
 });
 
 
