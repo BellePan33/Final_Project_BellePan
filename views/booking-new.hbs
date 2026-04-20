@@ -15,7 +15,11 @@
       <div class="col-lg-8 col-xl-6">
         <div class="card shadow-sm">
           <div class="card-body p-4">
-            <h1 class="h2 mb-4 text-center">Book a Makeup Artist: {{artist.name}}</h1>
+            <h1 class="h2 mb-3 text-center">Book a Makeup Artist: {{artist.name}}</h1>
+
+            <p class="text-center text-muted mb-4">
+              Booking Date: {{bookingDate}}
+            </p>
 
             <form action="/bookings" method="POST">
               <input type="hidden" name="artistId" value="{{artist._id}}">
@@ -46,10 +50,9 @@
                 <label for="slot" class="form-label">Select Time Range</label>
                 <select id="slot" name="slot" class="form-select" required>
                   <option value="">Choose a time slot</option>
-                  <option value="5:00 AM - 5:40 AM">5:00 AM - 5:40 AM</option>
-                  <option value="5:40 AM - 6:20 AM">5:40 AM - 6:20 AM</option>
-                  <option value="6:20 AM - 7:00 AM">6:20 AM - 7:00 AM</option>
-                  <option value="7:00 AM - 7:40 AM">7:00 AM - 7:40 AM</option>
+                  {{#each slots}}
+                    <option value="{{this.value}}">{{this.label}}</option>
+                  {{/each}}
                 </select>
               </div>
 
